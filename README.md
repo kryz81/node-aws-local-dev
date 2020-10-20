@@ -14,3 +14,12 @@ Example of local development environment for AWS
 * Map a subdomain to the test environment  
 * Create docker-compose files to speed up local development
 * Evaluate various AWS mocking tools
+
+### Install
+
+* Generate access key and secret for your AWS user, put them into ~/.aws/credentials
+* Edit .env file and set your aws profile name, for example: AWS_PROFILE=default
+
+### Run
+
+* Run the application: npm run start:dev
