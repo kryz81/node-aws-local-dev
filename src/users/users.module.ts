@@ -5,10 +5,6 @@ import { UsersService } from './services/users.service';
 
 @Module({
   controllers: [UsersController],
-  providers: [
-    UsersService,
-    { provide: 'UsersRepository', useClass: DynamoDbUsersRepository },
-    { provide: 'UsersTable', useValue: 'test_users' },
-  ],
+  providers: [UsersService, { provide: 'UsersRepository', useClass: DynamoDbUsersRepository }],
 })
 export class UsersModule {}

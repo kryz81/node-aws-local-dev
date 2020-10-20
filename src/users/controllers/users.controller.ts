@@ -1,4 +1,5 @@
-import { Controller, Get } from '@nestjs/common';
+import { Body, Controller, Get, Post } from '@nestjs/common';
+import { UserDto } from '../model/UserDto';
 import { UsersService } from '../services/users.service';
 import { User } from '../model/User';
 
@@ -9,5 +10,10 @@ export class UsersController {
   @Get()
   async getUsers(): Promise<User[]> {
     return this.usersService.getUsers();
+  }
+
+  @Post()
+  async addUser(@Body() userDto: UserDto) {
+    await this.usersService.addUser(userDto);
   }
 }
