@@ -19,6 +19,6 @@ describe('AppController (e2e)', () => {
     return request(app.getHttpServer())
       .get('/users')
       .expect(200)
-      .expect('Hello World!');
+      .expect([{ enabled: false, id: '1', name: 'My Test User', age: 28 }]);
   });
 });
