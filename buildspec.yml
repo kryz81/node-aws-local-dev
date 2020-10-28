@@ -11,3 +11,9 @@ phases:
       - npm run build
       - npm run test
       - npm run test:e2e
+
+artifacts:
+  files:
+    - dist
+    - node_modules
+  location: kryz-output-bucket
