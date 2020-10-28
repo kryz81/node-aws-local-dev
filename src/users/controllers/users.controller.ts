@@ -9,7 +9,6 @@ export class UsersController {
 
   @Get()
   async getUsers(): Promise<User[]> {
-    console.log('test3');
     return this.usersService.getUsers();
   }
 
