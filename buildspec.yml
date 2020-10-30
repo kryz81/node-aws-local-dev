@@ -8,6 +8,7 @@ phases:
       - npm i
   build:
     commands:
+      - echo $CODEBUILD_BUILD_NUMBER 
       - npm run build
       - npm run test
       - npm run test:e2e
@@ -16,7 +17,7 @@ phases:
       - mkdir release
       - cp -R node_modules/ release
       - cp -R dist/ release
-      - zip -qr release.zip release      
+      - zip -qr release${CODEBUILD_BUILD_NUMBER}.zip release      
 
 artifacts:
   files:
