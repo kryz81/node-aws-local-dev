@@ -11,13 +11,9 @@ phases:
       - npm run build
       - npm run test
       - npm run test:e2e
-  post_build:
-    commands:
-      - mkdir release
-      - cp -R node_modules/ release
-      - cp -R dist/ release
-      - zip -qr release.zip release
 
 artifacts:
+  type: zip
   files:
-    - release.zip
+    - dist
+    - node_modules
