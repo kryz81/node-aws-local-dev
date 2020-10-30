@@ -9,6 +9,7 @@ export class UsersController {
 
   @Get()
   async getUsers(): Promise<User[]> {
+    console.log('test');
     return this.usersService.getUsers();
   }
 
