@@ -1,3 +1,3 @@
 #!/bin/bash
 
-node dist/main.js
+node /homr/ec2-user/dist/main.js
