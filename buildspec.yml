@@ -22,6 +22,8 @@ phases:
       - mkdir release
       - cp -R node_modules/ release
       - cp -R dist/ release
+      - cp -R scripts/ release
+      - cp appspec.yml release/appspec.yml
       - zip -qr release.zip release      
 
 artifacts:
