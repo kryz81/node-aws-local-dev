@@ -3,7 +3,14 @@ os: linux
 files:
   - source: /
     destination: /home/bitnami/
+
 hooks:
+  ApplicationStop:
+    - location: scripts/stop.sh
+      runas: root
+      timeout: 30
+
   ApplicationStart:
-    - location: my-web-app/scripts/run.sh
-      runas: bitnami
+    - location: scripts/run.sh
+      runas: root
+      timeout: 30
