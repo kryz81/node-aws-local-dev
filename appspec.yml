@@ -2,8 +2,8 @@ version: 0.0
 os: linux
 files:
   - source: /
-    destination: /home/bitnami/node-aws-local-dev
+    destination: /home/bitnami/
 hooks:
   ApplicationStart:
-    - location: scripts/run.sh
+    - location: my-web-app/scripts/run.sh
       runas: bitnami
