@@ -12,7 +12,7 @@ export class DynamoDbUsersRepository implements UsersRepository {
   private client: DocumentClient;
 
   constructor(private readonly idGeneratorService: IdGeneratorService, private readonly configService: ConfigService) {
-    this.usersTable = `${this.configService.get<string>('DATA_NAMESPACE')}_users`;
+    this.usersTable = `${this.configService.get<string>('DATA_NAMESPACE')}users`;
     this.client = new AWS.DynamoDB.DocumentClient({ endpoint: this.configService.get<string>('AWS_ENDPOINT_URL') });
   }
 

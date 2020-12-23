@@ -27,8 +27,6 @@ describe('CatsController', () => {
     it('returns user list', async () => {
       const result = await usersService.getUsers();
 
-      console.log('env: ', process.env.NODE_ENV);
-
       expect(result).toEqual([{ id: '1', name: 'Test User', age: 60, enabled: true }]);
     });
   });
