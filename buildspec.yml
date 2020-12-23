@@ -1,5 +1,9 @@
 version: 0.2
 
+env:
+  parameter-store:
+    MY_TEST: NODE_AWS_TEST      
+
 phases:
   install:
     runtime-versions:
@@ -8,6 +12,8 @@ phases:
       - npm i
   build:
     commands:
+      - echo ${MY_TEST} 
+      - echo $CODEBUILD_BUILD_NUMBER 
       - npm run build
       - npm run test
       - npm run test:e2e
@@ -16,8 +22,11 @@ phases:
       - mkdir release
       - cp -R node_modules/ release
       - cp -R dist/ release
-      - zip -qr release.zip release
+      - cp -R scripts/ release
+      - cp appspec.yml release/appspec.yml
+      - zip -qr release.zip release      
 
 artifacts:
   files:
     - release.zip
+    
