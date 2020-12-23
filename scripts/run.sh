@@ -1,3 +1,3 @@
 #!/bin/bash
 
-node /home/bitnami/my-web-app/dist/main.js &
+node /home/bitnami/node-aws-loca-dev/dist/main.js &
